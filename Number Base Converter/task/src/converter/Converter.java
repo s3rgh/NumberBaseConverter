@@ -1,7 +1,11 @@
 package converter;
 
 public class Converter {
-    public static String convert(String number, Integer base) {
-        return Integer.toString(Integer.parseInt(number), base);
+    public String convertFrom(String number, String base) {
+        return Integer.toString(Integer.parseInt(number), Integer.parseInt(base));
+    }
+
+    public String convertTo(String number, String base) {
+        return Integer.toString(Integer.parseInt(String.valueOf(number), Integer.parseInt(base)), 10);
     }
 }
