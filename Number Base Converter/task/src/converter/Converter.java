@@ -1,11 +1,9 @@
 package converter;
 
-public class Converter {
-    public String convertFrom(String number, String base) {
-        return Integer.toString(Integer.parseInt(number), Integer.parseInt(base));
-    }
+import java.math.BigInteger;
 
-    public String convertTo(String number, String base) {
-        return Integer.toString(Integer.parseInt(String.valueOf(number), Integer.parseInt(base)), 10);
+public class Converter {
+    public String convert(String number, String sourceBase, String targetBase) {
+        return new BigInteger(number, Integer.parseInt(sourceBase)).toString(Integer.parseInt(targetBase));
     }
 }
