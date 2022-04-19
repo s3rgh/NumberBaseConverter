@@ -22,6 +22,8 @@ public class Runner {
                     number = userInterface.readNumberOrBack(scanner, type.get(0), type.get(1));
                     if (number.equals("/back")) {
                         break;
+                    } else if (number.contains(".") || number.contains(",")) {
+                        result = converter.convertWithFractional(number, type.get(0), type.get(1));
                     } else {
                         result = converter.convert(number, type.get(0), type.get(1));
                     }
